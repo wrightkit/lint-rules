@@ -12,9 +12,11 @@ contract (SPEC-309).
 
 ## Use
 
-Wright ships these rules by default, so no configuration is needed. To use a newer
-revision than your Wright release embeds, pin it by full commit SHA in the
-project's lint configuration:
+The rules need Wright 0.41.0 or later. Older releases refuse the whole package.
+
+Wright ships these rules by default, so no configuration is needed. To use a
+revision of this repository instead, pin it by full commit SHA in the project's
+lint configuration:
 
 ```yaml
 packages:
@@ -22,8 +24,10 @@ packages:
     sha: <full commit SHA>
 ```
 
-The pinned revision replaces the embedded rules. Project configuration sets
-each rule's enablement and severity.
+The pinned revision replaces Wright's default rules that have the same IDs.
+Today those defaults are native rules in Wright; from `wrightkit/wright#1081`
+on, Wright embeds a recorded revision of this package instead. Project
+configuration sets each rule's enablement and severity.
 
 ## Test
 
@@ -31,6 +35,6 @@ each rule's enablement and severity.
 tests/run.sh
 ```
 
-Requires `wright`, `jq`, and `shasum` on `PATH`. Set `WRIGHT` to test another
-Wright executable. [`AGENTS.md`](AGENTS.md) defines the fixture format and how
+Requires Wright 0.41.0 or later as `wright`, plus `jq` and `shasum`, on
+`PATH`. Set `WRIGHT` to test another Wright executable. [`AGENTS.md`](AGENTS.md) defines the fixture format and how
 rules are admitted and changed.

@@ -41,6 +41,9 @@ workspace `AGENTS.md` first, then these rules.
 ## How a change reaches users
 
 - CI runs the fixtures against the latest Wright release.
+- The minimum Wright release is stated in `README.md`. Wright refuses the
+  whole package when one rule uses a field it does not know. When a rule uses
+  a newer matcher feature, raise that minimum in the same PR.
 - Wright embeds this repository's `rules/` at a recorded commit SHA. A merged
   change reaches users when Wright bumps that SHA in a PR and releases; users
   then receive it through `wright update self`. Until `wrightkit/wright#1081`
