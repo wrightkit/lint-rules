@@ -46,8 +46,7 @@ workspace `AGENTS.md` first, then these rules.
   a newer matcher feature, raise that minimum in the same PR.
 - Wright embeds this repository's `rules/` at a recorded commit SHA. A merged
   change reaches users when Wright bumps that SHA in a PR and releases; users
-  then receive it through `wright update self`. Until `wrightkit/wright#1081`
-  lands, Wright still ships native copies of the rules here.
+  then receive it through `wright update self`.
 - A project can use a newer revision before that by pinning this repository
   with a full SHA under `packages` in its lint configuration. The pinned
   revision replaces the embedded one.
